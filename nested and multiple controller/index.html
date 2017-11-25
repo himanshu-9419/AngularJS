@@ -5,10 +5,10 @@
 </head>
 
 <body>
-    <div ng-controller="ctrl1">
-        {{testProp}}
-        <div ng-controller="ctrl2">
-            {{testProp}}
+    <div ng-controller="ctrl1 as c1">
+        {{c1.testProp}}
+        <div ng-controller="ctrl2 as c2">
+            {{c2.testProp}}
         </div>
     </div>
       
