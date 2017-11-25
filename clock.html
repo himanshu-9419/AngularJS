@@ -4,7 +4,8 @@
     </head>
     <body>
         <div ng-controller="Clock"> 
-            <h1>Clock App</h1>
+            <h1>Welcome {{userName}} Clock App</h1>
+            Please Enter Your Name <input ng-model="userName" type="text"/>
             <p>The Current Time is <span ng-bind="time"></span></p>
             <button ng-click="updateTimePeriod()">Update</button>
         </div>
