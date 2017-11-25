@@ -8,5 +8,5 @@ function ctrl1($scope){
 }
 
 function ctrl2($scope){
-    $scope.testProp="ctrl2";
+    //$scope.testProp="ctrl2";
 }
