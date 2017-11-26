@@ -7,9 +7,7 @@
 </head>
 
 <body >
-    <div id="header" ng-controller="HeaderCtrl as header">
-        {{header.appTitle}}
-    </div>
+    
     <div class="container" ng-controller="ContactCtrl as ctrl">
         <h1>ContactApp{{1+1}}</h1>
         <div class="row">
@@ -46,10 +44,12 @@
             </div>
         </div>
     </div>
-    <div ng-controller="FooterCtrl as footer">
-        {{footer.appTitle}}
-    </div>
+    
 </body>
 <script src="app.js"></script>
-
+<script src="appConfig.service.js"></script>
+<script src="./appFactory.service.js"></script>
+<script src="./appname.service.js"></script>
+<script src="./user.controller.js"></script>
+<script src="./userdata.service.js"></script>
 </html>
