@@ -15,8 +15,8 @@ app.value("LoggingSvc",function(){console.log("Hello")})
 //     "author": "Himanshu"
 // });
 
-app.factory("AppFactorySvc",function(){
-    return "hello from factory service";
+app.factory("AppFactorySvc", function (AppNameSvc){
+    return AppNameSvc.name;
 })
 
 function ngmodelFunc() {
