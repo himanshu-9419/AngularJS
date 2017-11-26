@@ -4,9 +4,14 @@ app.controller("HeaderCtrl", headerFunc);
 app.controller("FooterCtrl", footerFunc);
 
 //angular value service
-app.value("AppNameSvc",{
-    "name":"Contact App",
-    "author":"Himanshu"
+// app.constant("AppNameSvc",{
+//     "name":"Contact App",
+//     "author":"Himanshu"
+// });
+//angular constant service
+app.constant("AppNameSvc", {
+    "name": "Contact App",
+    "author": "Himanshu"
 });
 
 function ngmodelFunc() {
