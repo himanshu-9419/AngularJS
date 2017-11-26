@@ -11,13 +11,14 @@
     <div class="container" ng-controller="ContactCtrl as ctrl">
         <h1>ContactApp{{1+1}}</h1>
         <div class="row">
+        <div class="col-md-6">
             <ul class="list-group" >
                 <li ng-click="ctrl.selectUser($index)" class="list-group-item" ng-repeat="user in ctrl.users">
                     <span>{{user.name.first+" "+user.name.last}}</span>
                 </li>
             </ul>
         </div>
-        <div class="row">
+        <div class="col-md-6">
             <div class="media">
                 <div class="media-left">
                     <a href="#">
@@ -26,25 +27,38 @@
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">{{ctrl.selectedUser.name.first+" "+ctrl.selectedUser.name.last}}</h4>
-                
+                    <button ng-hide="ctrl.editMode" ng-click="ctrl.toggleEditMode()">Edit</button>
+                    <button ng-show="ctrl.editMode" ng-click="ctrl.saveUser()">Save</button>
                     <p>
                         <h6>location</h6>
                     </p>
                     <p>
-                        {{ctrl.selectedUser.location.street+" "+ctrl.selectedUser.location.city+" "+ctrl.selectedUser.state}}
+                        <span>Street</span>
+                        <span ng-hide="ctrl.editMode">{{ctrl.selectedUser.location.street}}</span>
+                        <input ng-show="ctrl.editMode" type="text" ng-model="ctrl.selectedUser.location.street" />
                     </p>
-                
+                    <p>
+                        <span>City</span>
+                        <span ng-hide="ctrl.editMode">{{ctrl.selectedUser.location.city}}</span>
+                        <input ng-show="ctrl.editMode" type="text" ng-model="ctrl.selectedUser.location.city" />
+                    </p>
+                    <p>
+                        <span>State</span>
+                        <span ng-hide="ctrl.editMode">{{cctrl.selectedUser.state}}</span>
+                        <input ng-show="ctrl.editMode" type="text" ng-model="ctrl.selectedUser.location.state" />
+                    </p>
                     <p>
                         <h6>phone</h6>
                     </p>
                     <p>
-                        {{ctrl.selectedUser.cell}}
+                        <span ng-hide="ctrl.editMode">{{ctrl.selectedUser.cell}}</span>
+                        <input ng-show="ctrl.editMode" type="text" ng-model="ctrl.selectedUser.cell"/>
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    
+    </div>
 </body>
 <script src="app.js"></script>
 <script src="appConfig.service.js"></script>
